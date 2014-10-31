@@ -17,6 +17,8 @@
 		D027EA7E1A030F9600D04F75 /* FancyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D027EA7D1A030F9600D04F75 /* FancyTableViewCell.m */; };
 		D027EA801A03AE2200D04F75 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = D027EA7F1A03AE2200D04F75 /* Launch.xib */; };
 		D027EA861A03B7F100D04F75 /* UINavigationController+UpsideDownSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D027EA851A03B7F100D04F75 /* UINavigationController+UpsideDownSupport.m */; };
+		D027EA881A04420000D04F75 /* InterestingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D027EA871A04420000D04F75 /* InterestingTableViewCell.xib */; };
+		D027EA8B1A04444A00D04F75 /* InterestingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D027EA8A1A04444A00D04F75 /* InterestingTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		D027EA7F1A03AE2200D04F75 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		D027EA841A03B7F100D04F75 /* UINavigationController+UpsideDownSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+UpsideDownSupport.h"; sourceTree = "<group>"; };
 		D027EA851A03B7F100D04F75 /* UINavigationController+UpsideDownSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+UpsideDownSupport.m"; sourceTree = "<group>"; };
+		D027EA871A04420000D04F75 /* InterestingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterestingTableViewCell.xib; sourceTree = "<group>"; };
+		D027EA891A04444A00D04F75 /* InterestingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestingTableViewCell.h; sourceTree = "<group>"; };
+		D027EA8A1A04444A00D04F75 /* InterestingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestingTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +101,9 @@
 				D027EA7D1A030F9600D04F75 /* FancyTableViewCell.m */,
 				D027EA7A1A030F1900D04F75 /* FancyTableViewCell.xib */,
 				D027EA5D1A02DCC700D04F75 /* Images.xcassets */,
+				D027EA891A04444A00D04F75 /* InterestingTableViewCell.h */,
+				D027EA8A1A04444A00D04F75 /* InterestingTableViewCell.m */,
+				D027EA871A04420000D04F75 /* InterestingTableViewCell.xib */,
 				D027EA7F1A03AE2200D04F75 /* Launch.xib */,
 				D027EA501A02DCC700D04F75 /* Supporting Files */,
 				D027EA781A02DF1500D04F75 /* TheView.xib */,
@@ -213,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D027EA881A04420000D04F75 /* InterestingTableViewCell.xib in Resources */,
 				D027EA791A02DF1500D04F75 /* TheView.xib in Resources */,
 				D027EA7B1A030F1900D04F75 /* FancyTableViewCell.xib in Resources */,
 				D027EA801A03AE2200D04F75 /* Launch.xib in Resources */,
@@ -236,6 +245,7 @@
 			files = (
 				D027EA861A03B7F100D04F75 /* UINavigationController+UpsideDownSupport.m in Sources */,
 				D027EA591A02DCC700D04F75 /* TheViewController.m in Sources */,
+				D027EA8B1A04444A00D04F75 /* InterestingTableViewCell.m in Sources */,
 				D027EA561A02DCC700D04F75 /* AppDelegate.m in Sources */,
 				D027EA531A02DCC700D04F75 /* main.m in Sources */,
 				D027EA7E1A030F9600D04F75 /* FancyTableViewCell.m in Sources */,

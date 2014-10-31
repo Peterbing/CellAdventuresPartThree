@@ -8,12 +8,14 @@
 
 #import "TheViewController.h"
 #import "FancyTableViewCell.h"
+#import "InterestingTableViewCell.h"
 
 @interface TheViewController ()
 
 typedef NS_ENUM(NSInteger, TableSection) {
 	TableSectionPlainCells,
-	TableSectionFancyCells
+	TableSectionFancyCells,
+	TableSectionInterestingCells
 };
 
 @property (nonatomic, copy) NSArray *array;
@@ -37,6 +39,7 @@ typedef NS_ENUM(NSInteger, TableSection) {
 	self.title = @"Test";
 
 	[self.tableView registerNib:[UINib nibWithNibName:@"FancyTableViewCell" bundle:nil] forCellReuseIdentifier:@"Fancy"];
+	[self.tableView registerNib:[UINib nibWithNibName:@"InterestingTableViewCell" bundle:nil] forCellReuseIdentifier:@"Interesting"];
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	self.tableView.estimatedRowHeight = 44.0;
 }
@@ -78,6 +81,15 @@ typedef NS_ENUM(NSInteger, TableSection) {
 			[fancy updateConstraintsIfNeeded];
 			return fancy;
 		}
+		case TableSectionInterestingCells: {
+			InterestingTableViewCell *interesting = (InterestingTableViewCell *) [self.tableView dequeueReusableCellWithIdentifier:@"Interesting"];
+			interesting.topLabel.text = @"top";
+			interesting.bigLabel.text = @"big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big.";
+			interesting.bottomLabel.text = @"bottom";
+			[interesting setNeedsUpdateConstraints];
+			[interesting updateConstraintsIfNeeded];
+			return interesting;
+		}
 		default: {
 			NSAssert(NO, @(__PRETTY_FUNCTION__));
 			return nil;
@@ -94,6 +106,9 @@ typedef NS_ENUM(NSInteger, TableSection) {
 		case TableSectionFancyCells: {
 			return self.otherArray.count;
 		}
+		case TableSectionInterestingCells: {
+			return 1;
+		}
 		default: {
 			return 0;
 		}
@@ -102,7 +117,7 @@ typedef NS_ENUM(NSInteger, TableSection) {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 2;
+	return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
