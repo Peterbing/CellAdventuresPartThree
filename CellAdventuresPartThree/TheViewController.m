@@ -31,14 +31,14 @@ typedef NS_ENUM(NSInteger, TableSection) {
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    self.array = @[@"foo", @"bar", @"baz", @"qux"];
-    self.otherArray = @[@"this is an exceptionally", @"delicious, healthy, spooky, fantastic, surprising", @"hot and delicious and surprising and surprising and hot and delicious and just all-around excellent", @"hot dog", @"sandwich, sandwich… sandwich sandwich. Sandwich sandwich sandwich! Sandwich, sandwich sandwich: sandwich. Sandwich, sandwich, sandwich sandwich sandwich “sandwich” ‘sandwich,’ sandwich!!!"];
-    self.title = @"Test";
+	[super viewDidLoad];
+	self.array = @[@"foo", @"bar", @"baz", @"qux"];
+	self.otherArray = @[@"this is an exceptionally", @"delicious, healthy, spooky, fantastic, surprising", @"hot and delicious and surprising and surprising and hot and delicious and just all-around excellent", @"hot dog", @"sandwich, sandwich… sandwich sandwich. Sandwich sandwich sandwich! Sandwich, sandwich sandwich: sandwich. Sandwich, sandwich, sandwich sandwich sandwich “sandwich” ‘sandwich,’ sandwich!!!"];
+	self.title = @"Test";
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"FancyTableViewCell" bundle:nil] forCellReuseIdentifier:@"Fancy"];
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 44.0;
+	[self.tableView registerNib:[UINib nibWithNibName:@"FancyTableViewCell" bundle:nil] forCellReuseIdentifier:@"Fancy"];
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
+	self.tableView.estimatedRowHeight = 44.0;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -63,56 +63,56 @@ typedef NS_ENUM(NSInteger, TableSection) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.section) {
-        case TableSectionPlainCells: {
-            UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:nil];
-            cell.textLabel.text = self.array[indexPath.row];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"row %@", @(indexPath.row)];
-            return cell;
-        }
-        case TableSectionFancyCells: {
-            FancyTableViewCell *fancy = (FancyTableViewCell *) [self.tableView dequeueReusableCellWithIdentifier:@"Fancy"];
-            fancy.theLabel.text = self.otherArray[indexPath.row];
+	switch (indexPath.section) {
+		case TableSectionPlainCells: {
+			UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:nil];
+			cell.textLabel.text = self.array[indexPath.row];
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"row %@", @(indexPath.row)];
+			return cell;
+		}
+		case TableSectionFancyCells: {
+			FancyTableViewCell *fancy = (FancyTableViewCell *) [self.tableView dequeueReusableCellWithIdentifier:@"Fancy"];
+			fancy.theLabel.text = self.otherArray[indexPath.row];
 			fancy.theLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-            [fancy setNeedsUpdateConstraints];
-            [fancy updateConstraintsIfNeeded];
-            return fancy;
-        }
-        default: {
-            NSAssert(NO, @(__PRETTY_FUNCTION__));
-            return nil;
-        }
-    }
+			[fancy setNeedsUpdateConstraints];
+			[fancy updateConstraintsIfNeeded];
+			return fancy;
+		}
+		default: {
+			NSAssert(NO, @(__PRETTY_FUNCTION__));
+			return nil;
+		}
+	}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case TableSectionPlainCells: {
-            return self.array.count;
-        }
-        case TableSectionFancyCells: {
-            return self.otherArray.count;
-        }
-        default: {
-            return 0;
-        }
-    }
+	switch (section) {
+		case TableSectionPlainCells: {
+			return self.array.count;
+		}
+		case TableSectionFancyCells: {
+			return self.otherArray.count;
+		}
+		default: {
+			return 0;
+		}
+	}
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+	return 2;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [NSString stringWithFormat:@"header for section %@", @(section)];
+	return [NSString stringWithFormat:@"header for section %@", @(section)];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return [NSString stringWithFormat:@"footer for section %@", @(section)];
+	return [NSString stringWithFormat:@"footer for section %@", @(section)];
 }
 
 #pragma mark -
